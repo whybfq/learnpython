@@ -36,3 +36,30 @@ def start_game():
         start_game()
 
 start_game()
+
+
+
+##########################################################################################
+and you can add some original money to add some enjoyment:
+
+def start_game():
+    print('  <<<<< GAME STARTS! >>>>> ')
+    print(' how much you want to bet(0 - 1000 ) and the origin you have 1000 : ')
+    money = input()
+    choices = ["Big", "Small" ]
+    your_choice = input('Big or Small: ')
+    if your_choice in choices:
+        points = roll_dice()
+        total = sum(points)
+        youWin = your_choice == roll_result(total)
+        if youWin:
+            money += 1000
+            print('The points are: ',points,'You win! ')
+            print('Now you have : ', money)
+        else:
+            money = 1000 - money
+            print('The points are: ',points,'You lose ! ')
+            print('Now you have : ',money)
+    else :
+        print('Invalind Words ')
+        start_game()
