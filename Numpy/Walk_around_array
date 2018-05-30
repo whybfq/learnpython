@@ -1,7 +1,23 @@
+#!/usr/bin/python
+#-*- coding: utf8 -*-
 
-
-It is replaced by an array operation, using the np.random module to randomly generate
+u'''''
+ Script file: walk_around.py
+Purpose:
+ A simulation applet, random walk, starting from 0, with a 1 or -1 step, equal probability. Take a total of 1000 steps.
+ Now it is replaced by an array operation, using the np.random module to randomly generate
 a one-time result of 1000 coin flips (1 or -1), and then calculating the cumulative sum
+ 
+Record of revisions:
+Date           Programmer          Description of change
+=====          ==============      ===========================
+30-May-2018                         Original
+ 
+Define variables:
+position     --the position
+step         --it can be 1 or -1
+'''
+
 
 
 nsteps=1000
@@ -10,9 +26,9 @@ steps=np.where(draws > 0 , 1, -1)
 walk=steps.cumsum()
 
 
-after this, You can calculate the maximum and minimum values, for example
-walk.min() / walk.max()
+# after this, You can calculate the maximum and minimum values, for example
+# walk.min() / walk.max()
 
 (np.abs(walk) >= 10).argmax() 
 
-It returns how long it takes for this random walk to be at least 10 steps away from the initial 0 point (in either direction)
+# It returns how long it takes for this random walk to be at least 10 steps away from the initial 0 point (in either direction)
