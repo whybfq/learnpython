@@ -14,21 +14,24 @@ Date           Programmer          Description of change
 30-May-2018                         Original
  
 Define variables:
-position     --the position
 step         --it can be 1 or -1
 '''
 
 
-
-nsteps=1000
-draws = np.random.randint(0,2,size=nsteps)
+nwalks=5000   #calculate 5000 random walks
+nsteps=1000   #each random walk has 1000 steps
+draws = np.random.randint(0,2,size=(nwalks,nsteps))  #0 or 1
 steps=np.where(draws > 0 , 1, -1)
-walk=steps.cumsum()
+walks=steps.cumsum(1)
+walks
 
 
 # after this, You can calculate the maximum and minimum values, for example
-# walk.min() / walk.max()
+# walks.min() / walks.max()
 
-(np.abs(walk) >= 10).argmax() 
-
-# It returns how long it takes for this random walk to be at least 10 steps away from the initial 0 point (in either direction)
+hits30 = (np.abs(walk) >= 30).any(1)   ##Use boolean arrays to select random walks that have an absolute value of over 30 
+hits30.sum()   #Calculate the number of arrivals of 30 or -30
+crossing_times = (np.abs(walk[hits30]) >= 30).argmax(1)  #and call argmax to get the crossing time on axis 1
+crossing_times.mean() 
+# argmax returns the index of the first maximum of a Boolean array
+# It returns how long it takes for this random walk to be at least 30 steps away from the initial 0 point (in either direction)
