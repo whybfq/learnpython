@@ -1,0 +1,13 @@
+import ast   #ast abstract syntac tree 
+print( ast.dump(ast.parse("1 + 2")) )
+
+Output:
+Module(
+  body=[Expr(
+      value=BinOp(
+          left=Num(n=1), 
+          op=Add(), 
+          right=Num(n=2))
+      )
+   ]
+)
