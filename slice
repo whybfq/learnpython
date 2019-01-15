@@ -1,4 +1,5 @@
-利用切片操作，实现一个trim()函数，去除字符串首尾的空格，注意不要调用str的strip()方法：
+// 利用切片操作，实现一个trim()函数，去除字符串首尾的空格，注意不要调用str的strip()方法：
+// use slice to define trim() to Remove spaces at the beginning and end of the string
 
 def trim(s):
     if s== ' ': return s
