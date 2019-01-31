@@ -1,13 +1,5 @@
 1.https://docs.python.org/3.6/library/timeit.html
 
-
-
-
-
-
-
-
-
 ## To give the timeit module access to functions you define,
 ## you can pass a setup parameter which contains an import statement:
 def test():
