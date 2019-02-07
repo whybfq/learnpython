@@ -25,7 +25,7 @@ B1 = np.array([0.1,0.2,0.3])
 #
 # print(Z2) # [0.62624937 0.7710107 ]
 
-def init_network():
+def init_network(): #行权重和偏置的初始化，并将它们保存在字典变量 network 中
     network = {}
     network['W1'] = np.array([[0.1, 0.3, 0.5], [0.2, 0.4, 0.6]])
     network['b1'] = np.array([0.1, 0.2, 0.3])
@@ -35,7 +35,7 @@ def init_network():
     network['b3'] = np.array([0.1, 0.2])
     return network
 
-def forward(network,x):
+def forward(network,x): # 将输入信号转换为输出信号
     W1, W2, W3 = network['W1'], network['W2'], network['W3']
     b1, b2, b3 = network['b1'], network['b2'], network['b3']
     a1 = np.dot(x, W1) + b1
