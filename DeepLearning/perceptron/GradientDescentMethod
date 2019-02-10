@@ -34,7 +34,7 @@ def gradient_descent(f,init_x,lr=0.01,step_num=100):
 
     return x
 
-init_x = np.array([-3.0,4.0])
+init_x = np.array([-3.0,4.0])   # 设初始值为(-3.0, 4.0)，开始使用梯度法􏱍找最小值
 print(gradient_descent(function_2,init_x, 0.1,100))
 
 Output:
