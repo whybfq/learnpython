@@ -26,7 +26,7 @@ def numerical_gradient(f,x):  # 求解数值微分  [f(x+h) - f(x-h)] / (2*h)
 
     return grad
 
-def gradient_descent(f,init_x,lr=0.01,step_num=100): #lr learning rate学习率, it should not be too large or too small
+def gradient_descent(f,init_x,lr=0.01,step_num=100): #lr learning rate学习率(超参数）, it should not be too large or too small
     x = init_x
     for i in range(step_num):
         grad = numerical_gradient(f,x)
