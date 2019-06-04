@@ -19,4 +19,31 @@ with a negative step. This will return a new list of elements in reverse order.
 for i in list[::-1]:
   ...
   
+def reverse(x, i = 0):
+  while i + 1 <= len(x) // 2:
+    a , b = x[i],x[-(i + 1)]
+    x[i], x[-(i+1)] = b, a
+    i += 1
+  return x
+  
+'''
+Any hint as to how we would use i in the Reversii plot?
 
+As noted, this is for extra study when one has competed the course. 
+Bookmark it and return later to explore this concept. It won’t come up 
+in the course but will surely have piqued your interest.
+See you on the flip-flop.
+what's more we can deal with one exception, a str parameter...
+'''
+
+def reverse(x, i = 0):
+  try: 
+    while i + 1 <= len(x) // 2:
+      x[-i - 1], x[i] = x[i], x[-i - 1]
+      i += 1
+    return x
+  except:
+    if isinstance(x, str):
+      return ''.join(reverse(list(x)))
+    else:
+      return x
