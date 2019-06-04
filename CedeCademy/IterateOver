@@ -1,0 +1,22 @@
+#Reference: https://discuss.codecademy.com/t/how-can-i-iterate-over-a-list-backward/376303
+
+'''
+One way is by utilizing the range() method, with a negative step value, 
+so that the index decreases by 1 per element, essentially going backward 
+in the list. The start index must begin at the last index of the list, 
+and the end index would have to be offset by 1 to the first index, 
+because it is exclusive. This will look something like the following,
+'''
+
+for i in range(len(list)-1,-1,-1):
+  ...
+
+'''
+Another way to iterate over a list backward is to utilize list slicing, 
+with a negative step. This will return a new list of elements in reverse order.
+'''
+
+for i in list[::-1]:
+  ...
+  
+
