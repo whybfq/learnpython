@@ -20,11 +20,14 @@ for i in list[::-1]:
   ...
   
 def reverse(x, i = 0):
-  while i + 1 <= len(x) // 2:
-    a , b = x[i],x[-(i + 1)]
-    x[i], x[-(i+1)] = b, a
-    i += 1
-  return x
+ try:
+   while i + 1 <= len(x) // 2:
+     a , b = x[i],x[-(i + 1)]
+     x[i], x[-(i+1)] = b, a
+     i += 1
+   return x
+  except:
+   return x
   
 '''
 Any hint as to how we would use i in the Reversii plot?
@@ -47,3 +50,4 @@ def reverse(x, i = 0):
       return ''.join(reverse(list(x)))
     else:
       return x
+>>> reverse('a string')
