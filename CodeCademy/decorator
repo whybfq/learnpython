@@ -4,8 +4,14 @@ def title_decorator(print_name_function):
         print_name_function(*args, **kwargs)
     return wrapper
 
-@title_decorator
+@title_decorator   #if no this sentence, only output the name
 def print_my_name(name):
     print(name)
 
 print_my_name("sdw")
+
+
+
+Output:
+Professor:
+sdw
